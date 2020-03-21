@@ -17,3 +17,4 @@ class Config(object):
     ADMINS = ['agedcolombo@hotmail.com']
     POSTS_PER_PAGE = 3
     LANGUAGES = ['en', 'es']
+    WATSON_APIKEY = os.environ.get('WATSON_APIKEY')

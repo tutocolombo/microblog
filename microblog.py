@@ -1,4 +1,4 @@
-from app import app
+from app import app, cli
 
 
 @app.shell_context_processor
