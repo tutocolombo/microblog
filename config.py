@@ -19,3 +19,4 @@ class Config(object):
     LANGUAGES = ['en', 'es']
     WATSON_APIKEY = os.environ.get('WATSON_APIKEY')
     POSTS_PER_PAGE = 25
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
