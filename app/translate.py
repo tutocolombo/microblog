@@ -2,15 +2,15 @@
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from flask_babel import _
-from app import app
+from flask import current_app
 
 
 def translate(text, source_language, dest_language):
-    if 'WATSON_APIKEY' not in app.config or \
-            not app.config['WATSON_APIKEY']:
+    if 'WATSON_APIKEY' not in current_app.config or \
+            not current_app.config['WATSON_APIKEY']:
         return _('Error: the translation service is not configured.')
 
-    authenticator = IAMAuthenticator(app.config['WATSON_APIKEY'])
+    authenticator = IAMAuthenticator(current_app.config['WATSON_APIKEY'])
     language_translator = LanguageTranslatorV3(
         version='2018-05-01',
         authenticator=authenticator
